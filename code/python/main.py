@@ -11,7 +11,7 @@ def handler(event, context):
     evt = json.loads(event)
 
     #body = evt['body']
-    ret = {'msg':'hello function compute.', 'type':'fc', 'input': evt}
+    ret = {'output': {'msg':'hello function compute.', 'lang':'python'}, 'input': evt}
     responseBody = json.dumps(ret)
     if evt['isBase64Encoded']:
         responseBody = json.loads(base64.b64decode(body))
